@@ -16,13 +16,12 @@ location = fetch_location(place_name)
 woeid = location[0]['woeid']
 print(woeid)
 weather = fetch_weather(woeid)
-print(weather['consolidated_weather'][0]['created'])
+# print(weather['consolidated_weather'][0]['created'])
 
 for date in weather['consolidated_weather']:
-    print(date['applicable_date'])
-
-    # for ekDict in date :
-    #     if ekDict == 'applicable_date':
-    #         print(ekDict[])
-
+    wind_direction = date['wind_direction_compass']
+    wind_speed = int(date['wind_speed'])*1.60
+    current_date = date['applicable_date']
+    print(current_date)
+    
     
